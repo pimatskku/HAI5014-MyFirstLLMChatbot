@@ -4,7 +4,7 @@ from azure.ai.inference.models import SystemMessage, UserMessage
 from azure.core.credentials import AzureKeyCredential
 
 endpoint = "https://models.inference.ai.azure.com"
-model_name = "DeepSeek-V3"
+model_name = "gpt-4o"
 token = os.environ["AZURE_AI_SECRET"]
 
 client = ChatCompletionsClient(
@@ -15,7 +15,7 @@ client = ChatCompletionsClient(
 response = client.complete(
     messages=[
         SystemMessage("You are a helpful assistant."),
-        UserMessage("I want to make a loop that asks for a user's input and then replies, until a user inputs 'bye'?"),
+        UserMessage("I am considering to study at SKKU, which is the best campus?"),
     ],
     temperature=1.0,
     top_p=1.0,
